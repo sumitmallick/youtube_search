@@ -1,0 +1,13 @@
+from googleapiclient.discovery import build
+
+api_key = "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCrhP6l6Z628GA2\nqSBdKNiofQmyRaEUFBED0JOjtmeY1+0AmMx6BXI0+ubqGkRxFUrTjVTPCt4LwD0C\nTqvACT6gf1RMLSDWIyFQ+0oViXIgsSSu0Gj/GGRYoiKuWKpSok1MxQcnORF5YG3g\nBiXNe702PzWWRAJxD61yIkPB6KUgeYeM8XoqG7c6T7uVnDCHvnrdCwHpGaaa7rNX\ndoUladsT0VKELNZMq4rLPhDPiznn2W03laMpo8J9tYjK/iNd++/kOdJakil41b9c\npBtl9sh7Wy/LXg9xWqIl3SwzaESuzM8Bp2h5vih/lU/3aZv/UnBcL6DVf9e6BDU/\nU8PyzurNAgMBAAECggEAF3l0xq1SMRR1/pUoHkfsWyb90D3SXWafq4d85V+eDx+i\nSr4e4iZjqpeaSfj9XAK/gnOp40pH+JC/aNTukbJSNXInzeMxRs15DlXOHmN40Lud\n2yUf8aXbefv6xiTRbszSyop+v6ICX7vQXeRJgTWJwGZnRaEaOnIcWW4SGvRlwStX\nLXsPqQCFxR+wX6rFXlOAhPNUWWKuRonvDWDOHmR4mMBmj54tyogFmpvrzlLpP0YL\necFnmlOwATDVfh3oiy829kJKaH7DYuSXoRtLoRCnfbpmEKwxw0QCt6GxXsR8UYrc\nCObSO+IVgJVUcTeGS66g8rVFehzjIaaXifXTDfIpYQKBgQDphwWIsGHEeRyio5DX\nY/IeqQzdQNWJpg/AfI5FE7LyfB8T/ZRRqT5z6s5CfdLlLIewlgKcsWftjcI5AKh3\nPyIm+P2TtfhLi5ZCXFd4IgbAW+iO2shVXn0OU2oFByueuXIA0/Z868NNwRZ0xObx\nhr3f78ltOcZizHMVexbanCZdnQKBgQC8BmZozec/5bR12eFOWTd+bOEt++8DVaXk\naywxTso+2hVF7oHfkIXfngVOlys1CA7i5XLZYd0Jf9TAzO9KZJVssFkCabc5kWcz\n4yWO5Baaf+Q6eZbezqxCP1KaDVhfodaSa4s97s+eLMwzuw1jz7uiH6VQqqB2RLJa\n2GRTj57S8QKBgH4crKBkoGe5//zU2CN5lgd4w7m4iZkMVPVeTnZ/bOQGo8Hn73Eq\nNM/kvf6qdHnO0nhKip6UL8vaAklGUbQUJB1n2YkrfCtP9pVfyNzXg03eVHjRLd7s\naByUb2zHsobFHwvTbAmKSK501+u3agCFA4UruVuDF9/DCWNQVcc5DH8BAoGAW4Md\n6tp0N7Q7/bP6paBkkwK5IiFhNhVEdYT38FOxuZ95BR1NVptHnQuS96o5nEj8vdAA\n8u5fn1T5HpFf0axc0ZaO6866H6m2OhnO2NoIak/eq9sr4+thCak6McJXBcyF26O+\nFHmb0Rdql67tmGutnf2a/0TcblOHHxH82nKnUXECgYAubVnUiSjG6C6BdXbAiCcl\nvlBDojDG4nv8FDJbvURnhFy481cpMoQwXo0wV3ZTIZ+hdcTj9O/3Z3P0W/TstEz5\nVRMfriDHylIVPO4Dth3eW0+36Dyx0nKGHIrKn50COotENX+ohoL21OVahL9rNavX\nnulcqi4mHTLy5A2TSghw5g==\n-----END PRIVATE KEY-----\n"  # Please set your API key
+
+api_service_name = "youtube"
+api_version = "v3"
+youtube = build(api_service_name, api_version, developerKey=api_key)
+request = youtube.channels().list(
+    part="snippet,contentDetails,statistics",
+    id="UC_x5XG1OV2P6uZZ5FSM9Ttw"
+)
+response = request.execute()
+print(response)
