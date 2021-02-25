@@ -3,14 +3,14 @@
 **An complete Flask application template, with useful plugins.**
 ## Requirements
 
-Python 3.8.5+, pipenv
+Python 3.8.5+, flask, youtube-search
 
 ## Instalation
 
 First, clone this repository.
 
     $ git clone https://github.com/sumitmallick/youtube_search/
-    $ cd youtube_search
+    $ cd youtube_search_main
 
 After, create virtual env for the app and install all necessary packages to run:
 
